@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Decryption</title>
+</head>
+<body style="background-color: #f8f9fa; font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="width: 100%; max-width: 400px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+        <h2 style="margin-bottom: 20px; color: #343a40;">Upload a Video to Decrypt Hidden Message</h2>
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <div style="margin-bottom: 15px;">
+                <input type="file" name="video" accept=".avi" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;">
+            </div>
+
+            <!-- Decryption Key Input -->
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label for="key" style="margin-bottom: 5px; display: block; color: #495057;">Decryption Key</label>
+                <input type="text" id="key" name="key" placeholder="Enter decryption key" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" required>
+            </div>
+
+
+
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Upload and Decrypt
+            </button>
+        </form>
+    </div>
+</body>
+</html>
